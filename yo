@@ -59,23 +59,6 @@ local headshots = {
         Target = nil,
     },
 
-    Desync = {
-        Enabled = false,
-        Keybind = false,
-        Visualize = false,
-        Tranparency = 0,
-        Spam = false,
-        InVoid = 0.4,
-        OnGround = 0.133,
-        Method = "Custom",
-    },
-
-    Network = {
-        Desync = false,
-        UseSenderRate = false,
-        SenderRate = 60,
-        FakePos = false,
-        RefreshRate = 20,
     },
 
     Speed = {
