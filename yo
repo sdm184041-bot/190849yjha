@@ -59,8 +59,6 @@ local headshots = {
         Target = nil,
     },
 
-    },
-
     Speed = {
         Enabled = false,
         Keybind = false,
