@@ -9906,3 +9906,29 @@ for index, value in next, themes.preset do
 end
 
 -- // Yep // --
+
+-- // Anticheat Bypass
+
+local t = {}
+
+game:GetService("RunService").Heartbeat:Connect(function()
+    for _, c in ipairs(getconnections(game:GetService("LogService").MessageOut)) do
+        if not table.find(t, c) then
+            t[#t+1] = c
+            local u = pcall(getupvalues, c.Function) and getupvalues(c.Function) or {}
+            if #u >= 9 and type(u[9]) == "table" and type(u[9][1]) == "function" then
+                pcall(setupvalue, u[9][1], 14, function() return function(x)
+                    if type(x) == "table" then for i = 1, 4 do
+                        if type(x[i]) == "userdata" and x[i].Disconnect then pcall(x[i].Disconnect, x[i]) end
+                    end end
+                end end)
+                pcall(setupvalue, u[9][1], 1, function() task.wait(200) end)
+                local o = u[9][1]
+                pcall(hookfunction, u[9][1], function() return {} end)
+            end
+        end
+    end
+end)
+
+warn("[+] headshots.cc : anticheat bypassed.")
+
